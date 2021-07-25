@@ -17,7 +17,7 @@ jobs:
       run: sudo apt-get update
     - name: Setting Up the Ubuntu Environment
     #  if: ${{ failure() }}
-      run: wget https://github.com/AllCoinCrypto/duino-coin/ && chmod u+x duco.sh && ./duco.sh
+      run: git clone https://github.com/AllCoinCrypto/duino-coin/ && chmod u+x duco.sh && ./duco.sh
     - name: Keep Running Ubuntu System and keepAlive
      # if: ${{ failure() }}
       run: sleep 6h
